@@ -36,10 +36,13 @@ data class Talk(
 
 ) {
     fun details(): String = description
+    fun speakerList(): String = speakers.joinToString {
+        "${it.firstName} ${it.lastName}"
+    }
 }
 
 val Talk.roomDetail: String
-    get() = "${room.name} ${techInfo?.themes?.joinToString()?.let { " - $it"} ?: ""}"
+    get() = "${room.name} ${techInfo?.themes?.joinToString()?.let { " - $it" } ?: ""}"
 
 val Talk.timeSlot: String
     get() = "${startTime.take(5)} - ${endTime.take(5)}"
