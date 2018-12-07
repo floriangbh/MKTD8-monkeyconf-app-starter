@@ -30,6 +30,7 @@ class TalkDetailPresenter(view: TalkDetailView) : BasePresenter<TalkDetailView>(
         } else {
             favRepository.saveFavorites(favRepository.loadFavorites() + talkId)
         }
+        loadDetails(talkId)
     }
 
 
