@@ -6,7 +6,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 
 @ThreadLocal
 object Container {
-    private val uiDispatcher: CoroutineDispatcher = CommonDispatcher.ui
+    val uiDispatcher: CoroutineDispatcher = CommonDispatcher.ui
 
-    private val conferenceRepository = ConferenceRepositoryImpl("https://monkeyconf.herokuapp.com/")
+    val conferenceRepository = ConferenceRepositoryImpl("https://monkeyconf.herokuapp.com/")
 }

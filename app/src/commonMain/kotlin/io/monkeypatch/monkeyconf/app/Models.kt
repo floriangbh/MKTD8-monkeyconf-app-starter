@@ -34,3 +34,9 @@ data class Talk(
     @Optional val techInfo: TechInfo? = null,
     val description: String
 )
+
+val Talk.roomDetail: String
+    get() = "${room.name} ${techInfo?.themes?.joinToString()?.let { " - $it"} ?: ""}"
+
+val Talk.timeSlot: String
+    get() = "${startTime.take(5)} - ${endTime.take(5)}"
