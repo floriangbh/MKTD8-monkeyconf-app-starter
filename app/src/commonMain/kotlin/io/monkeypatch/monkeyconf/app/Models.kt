@@ -39,10 +39,9 @@ data class Talk(
     fun speakerList(): String = speakers.joinToString {
         "${it.firstName} ${it.lastName}"
     }
+
+    fun roomDetail(): String = "${room.name} ${techInfo?.themes?.joinToString()?.let { " - $it" } ?: ""}"
+
+    fun timeSlot(): String = "${startTime.take(5)} - ${endTime.take(5)}"
 }
 
-val Talk.roomDetail: String
-    get() = "${room.name} ${techInfo?.themes?.joinToString()?.let { " - $it" } ?: ""}"
-
-val Talk.timeSlot: String
-    get() = "${startTime.take(5)} - ${endTime.take(5)}"

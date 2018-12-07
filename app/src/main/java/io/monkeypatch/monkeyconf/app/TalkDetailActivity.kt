@@ -46,8 +46,8 @@ class TalkDetailActivity : AppCompatActivity(), TalkDetailView {
     override fun displayTalk(talk: Talk) {
         supportActionBar?.title = talk.title
         speakersTextView.text = talk.speakerList()
-        hourTextView.text = talk.timeSlot
-        roomTextView.text = talk.roomDetail
+        hourTextView.text = talk.timeSlot()
+        roomTextView.text = talk.roomDetail()
 
         descriptionTextView.text = talk.description
     }
