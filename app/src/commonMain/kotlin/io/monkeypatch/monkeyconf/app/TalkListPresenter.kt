@@ -24,7 +24,7 @@ class TalkListPresenter(localView: TalkListView) : BasePresenter<TalkListView>(l
         launch {
             try {
                 val talks = repository.getConference()
-                view.showTalks(talks.filter { text in it.title || text in it.description })
+                view.showTalks(talks.filter { it.title.contains(text, true) || it.description.contains(text, true) })
             } catch (e: Exception) {
                 view.displayError(e)
             }
