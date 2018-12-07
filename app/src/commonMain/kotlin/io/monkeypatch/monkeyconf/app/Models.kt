@@ -33,7 +33,10 @@ data class Talk(
     val room: Room,
     @Optional val techInfo: TechInfo? = null,
     val description: String
-)
+
+) {
+    fun details(): String = description
+}
 
 val Talk.roomDetail: String
     get() = "${room.name} ${techInfo?.themes?.joinToString()?.let { " - $it"} ?: ""}"
