@@ -28,6 +28,10 @@ class TalkDetailActivity : AppCompatActivity(), TalkDetailView {
 
         setContentView(R.layout.activity_detail)
 
+        favoriteBtn.setOnClickListener {
+            presenter.markFavorite()
+        }
+
         presenter.onCreate()
     }
 
@@ -43,13 +47,14 @@ class TalkDetailActivity : AppCompatActivity(), TalkDetailView {
         presenter.loadDetails(id)
     }
 
-    override fun displayTalk(talk: Talk) {
+    override fun displayTalk(talk: Talk, favorite: Boolean) {
         supportActionBar?.title = talk.title
         speakersTextView.text = talk.speakerList()
         hourTextView.text = talk.timeSlot()
         roomTextView.text = talk.roomDetail()
 
         descriptionTextView.text = talk.description
+        favoriteBtn.setImageResource(if (favorite) R.drawable.ic_star_on else R.drawable.ic_star_off)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean =

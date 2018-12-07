@@ -8,5 +8,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 object Container {
     val uiDispatcher: CoroutineDispatcher = CommonDispatcher.ui
 
+    val favoritesRepository: FavoriteRepository = FavoriteRepository()
+
     val conferenceRepository = ConferenceRepositoryImpl("https://monkeyconf.herokuapp.com/")
 }
