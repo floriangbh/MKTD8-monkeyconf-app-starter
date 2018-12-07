@@ -50,6 +50,6 @@
                  android:src="@drawable/ic_star_on"
                  android:layout_marginTop="15dp"
                  android:layout_marginRight="10dp"
-
+                 android:background="@android:color/white"
     />
 </android.support.constraint.ConstraintLayout>
