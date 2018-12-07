@@ -102,7 +102,7 @@ class TalkListActivity : AppCompatActivity(), TalkListView {
 
 class TalkViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun displayTalk(summary: Talk, action: (String) -> Unit) {
-        itemView.talkHourTextView.text =  "${summary.startTime.take(5)}\n${summary.endTime.take(5)}"
+        itemView.talkHourTextView.text =  summary.timeSlotMultiline()
         itemView.talkTitleTextView.text = summary.title
         itemView.talkSubTitleTextView.text = summary.description.take(200)
         itemView.setOnClickListener { action(summary.id) }

@@ -43,5 +43,6 @@ data class Talk(
     fun roomDetail(): String = "${room.name} ${techInfo?.themes?.joinToString()?.let { " - $it" } ?: ""}"
 
     fun timeSlot(): String = "${startTime.take(5)} - ${endTime.take(5)}"
+    fun timeSlotMultiline(): String = "${startTime.take(5)}\n${endTime.take(5)}"
 }
 
