@@ -1,5 +1,6 @@
 package io.monkeypatch.monkeyconf.app
 
+import io.monkeypatch.monkeyconf.app.utils.CommonDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -15,7 +16,7 @@ abstract class BasePresenter<T : BaseView>(
     private lateinit var job: Job
 
     override val coroutineContext: CoroutineContext
-        get() = job + Dispatchers.Main
+        get() = job + CommonDispatcher.ui
 
     open fun onCreate() {
         job = Job()
