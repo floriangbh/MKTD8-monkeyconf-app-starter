@@ -1,5 +1,5 @@
 package io.monkeypatch.monkeyconf.app
 
 interface TalkDetailView : BaseView {
-    fun displayTalk(talk: Talk)
+    fun displayTalk(talk: Talk, favorite: Boolean)
 }
